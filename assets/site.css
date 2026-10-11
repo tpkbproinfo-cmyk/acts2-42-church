@@ -1,0 +1,23 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #C77D4F;
+  outline-offset: 2px;
+}
+.choice {
+  font: inherit; font-weight: 700; padding: 12px 22px; border-radius: 999px; cursor: pointer;
+  background: #FFFFFF; color: #2F4858; border: 2px solid #B9AE9C;
+}
+.choice[aria-pressed="true"] { background: #2F4858; color: #FAF7F2; border-color: #2F4858; }
+.form-note { margin: 0; font-size: 15px; line-height: 1.5; opacity: 0.85; }
+@media (max-width: 640px) {
+  h1 { font-size: 34px !important; }
+  h2 { font-size: 26px !important; }
+}
+button.pray {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font: inherit; font-weight: 700; font-size: 16px;
+  padding: 10px 16px; border-radius: 999px; cursor: pointer; background: #FFFFFF; color: #2F4858; border: 2px solid #E3DACB;
+}
+button.pray[aria-pressed="true"] { background: #F6E3D6; color: #8A4A22; border-color: #C77D4F; }
