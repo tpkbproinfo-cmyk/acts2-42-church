@@ -75,3 +75,41 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
     });
   });
 }
+
+// Spiritual gifts assessment (Romans 12)
+(function () {
+  var quiz = document.getElementById('gift-quiz');
+  if (!quiz) return;
+  var err = document.getElementById('gift-error');
+  var results = document.getElementById('gift-results');
+  var NAMES = { perceiving: 'Perceiving', serving: 'Serving', teaching: 'Teaching', encouraging: 'Encouraging',
+                giving: 'Giving', leading: 'Leading', mercy: 'Showing mercy' };
+  quiz.addEventListener('change', function () { err.hidden = true; });
+  document.getElementById('gift-submit').addEventListener('click', function () {
+    var groups = {}, total = {};
+    quiz.querySelectorAll('input[type="radio"]').forEach(function (r) {
+      groups[r.name] = groups[r.name] || false;
+      if (r.checked) { groups[r.name] = true; total[r.dataset.gift] = (total[r.dataset.gift] || 0) + Number(r.value); }
+    });
+    var missing = Object.keys(groups).filter(function (k) { return !groups[k]; });
+    if (missing.length) {
+      err.hidden = false;
+      var first = quiz.querySelector('input[name="' + missing[0] + '"]');
+      if (first) first.focus();
+      return;
+    }
+    var ranked = Object.keys(total).sort(function (a, b) { return total[b] - total[a]; });
+    var cutoff = total[ranked[Math.min(2, ranked.length - 1)]];
+    var top = ranked.filter(function (g, i) { return i < 3 || total[g] === cutoff; }).slice(0, 4);
+    document.querySelectorAll('[data-result]').forEach(function (c) {
+      var i = top.indexOf(c.dataset.result);
+      c.hidden = i < 0; c.style.order = i;
+    });
+    // pre-tick the gifts in the Get involved form
+    document.querySelectorAll('#get-involved input[name="gift"]').forEach(function (cb) {
+      cb.checked = top.some(function (g) { return NAMES[g] === cb.value; });
+    });
+    results.hidden = false;
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
