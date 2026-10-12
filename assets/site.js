@@ -63,3 +63,15 @@ document.querySelectorAll('button.pray').forEach(function (btn) {
     btn.querySelector('.pray-count').textContent = n + ' ' + btn.getAttribute('data-unit');
   });
 });
+
+// Ministry directory: open on hover for mouse users; tap or keyboard toggles everywhere
+if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('details.mdir').forEach(function (d) {
+    var pinned = false;
+    d.addEventListener('mouseenter', function () { d.open = true; });
+    d.addEventListener('mouseleave', function () { if (!pinned) d.open = false; });
+    d.querySelector('summary').addEventListener('click', function (e) {
+      e.preventDefault(); pinned = !pinned || !d.open; d.open = pinned;
+    });
+  });
+}

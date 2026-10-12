@@ -21,3 +21,8 @@ button.pray {
   padding: 10px 16px; border-radius: 999px; cursor: pointer; background: #FFFFFF; color: #2F4858; border: 2px solid #E3DACB;
 }
 button.pray[aria-pressed="true"] { background: #F6E3D6; color: #8A4A22; border-color: #C77D4F; }
+details.mdir > summary::-webkit-details-marker { display: none; }
+details.mdir > summary::marker { content: ""; }
+details.mdir .mdir-chev { transition: transform 0.2s ease; }
+details.mdir[open] .mdir-chev { transform: rotate(180deg); }
+details.mdir > summary:focus-visible { outline: 3px solid #C77D4F; outline-offset: -3px; }
