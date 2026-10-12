@@ -105,9 +105,10 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
       var i = top.indexOf(c.dataset.result);
       c.hidden = i < 0; c.style.order = i;
     });
-    // pre-tick the gifts in the Get involved form
-    document.querySelectorAll('#get-involved input[name="gift"]').forEach(function (cb) {
-      cb.checked = top.some(function (g) { return NAMES[g] === cb.value; });
+    // fill the top 3 gifts, in order, into the Get involved form
+    document.querySelectorAll('#get-involved select[data-rank]').forEach(function (sel) {
+      var g = top[Number(sel.dataset.rank) - 1];
+      sel.value = g ? NAMES[g] : '';
     });
     results.hidden = false;
     results.scrollIntoView({ behavior: 'smooth', block: 'start' });
