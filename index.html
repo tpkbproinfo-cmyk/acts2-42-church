@@ -175,6 +175,26 @@ a{color:#2F4858}a:hover{color:#1E3240}
     </div>
   </section>
 
+  <section id="prayer-board" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 720px">
+        <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 32px">Prayer board</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566">Pray with your church family. Tap the heart when you’ve prayed, so they know they’re not alone.</p>
+      </div>
+    </div>
+    <div id="live-board" data-feed="" data-app="https://acts-prayer-path.base44.app/" hidden style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px"></div>
+    <div id="board-fallback" style="background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 14px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+      <svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="#F6E3D6" stroke="#C77D4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      <h3 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 24px; color: #2F4858">Open our prayer board</h3>
+      <p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: #3B5566">See the requests our church family is praying for, and tap the heart when you’ve prayed.</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 4px">
+        <a href="https://acts-prayer-path.base44.app/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700; background: #C77D4F; color: #1E3240; padding: 14px 28px; border-radius: 999px">View the prayer board</a>
+        <a href="https://acts-prayer-path.base44.app/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700; border: 2px solid #2F4858; color: #2F4858; padding: 12px 26px; border-radius: 999px">Share a prayer request</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px; color: #4F6676"><span>Requests appear on the board only when the person chooses it, and after our pastors have reviewed them.</span></div>
+  </section>
+
   <section id="prayer" style="background: #2F4858">
     <div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
       <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px">
@@ -191,25 +211,6 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <p style="margin: 0; font-size: 14px; color: #B9AE9C">Opens our secure prayer page in a new tab.</p>
       </div>
     </div>
-  </section>
-
-  <section id="prayer-board" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 24px">
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 720px">
-        <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 32px">Prayer board</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566">Pray with your church family. Tap the heart when you’ve prayed, so they know they’re not alone.</p>
-      </div>
-    </div>
-    <div style="background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 14px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
-      <svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="#F6E3D6" stroke="#C77D4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-      <h3 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 24px; color: #2F4858">Open our prayer board</h3>
-      <p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: #3B5566">See the requests our church family is praying for, and tap the heart when you’ve prayed.</p>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 4px">
-        <a href="https://acts-prayer-path.base44.app/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700; background: #C77D4F; color: #1E3240; padding: 14px 28px; border-radius: 999px">View the prayer board</a>
-        <a href="https://acts-prayer-path.base44.app/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700; border: 2px solid #2F4858; color: #2F4858; padding: 12px 26px; border-radius: 999px">Share a prayer request</a>
-      </div>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px; color: #4F6676"><span>Requests appear on the board only when the person chooses it, and after our pastors have reviewed them.</span></div>
   </section>
 
   <section style="max-width: 1200px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
