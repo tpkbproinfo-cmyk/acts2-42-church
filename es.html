@@ -181,6 +181,11 @@ a{color:#2F4858}a:hover{color:#1E3240}
       <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 24px; color: #2F4858">Devocional de hoy</h2><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3B5566">Comienza tu día en la Palabra de Dios con el devocional Our Daily Bread (en inglés), actualizado cada mañana.</p></div>
       <a href="https://www.odbm.org/en/" target="_blank" rel="noopener" style="text-decoration: none; font-weight: 700; background: #2F4858; color: #FAF7F2; padding: 13px 24px; border-radius: 999px; white-space: nowrap">Leer el devocional de hoy →</a>
     </div>
+    <div style="margin-top: 16px; background: #FFFFFF; border: 1px solid #E3DACB; border-left: 6px solid #2F4858; border-radius: 14px; padding: 24px 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2F4858" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8.5 14.5l2.2 2.2 4.8-4.8"/></svg>
+      <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 24px; color: #2F4858">La Biblia en un año</h2><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3B5566">Lectura cronológica de hoy: <a href="bible-plan.html" id="home-bp-today" style="font-weight: 700; color: #8A4A22">ver el plan</a></p></div>
+      <a href="bible-plan.html" id="home-bp-link" style="text-decoration: none; font-weight: 700; background: #C77D4F; color: #1E3240; padding: 13px 24px; border-radius: 999px; white-space: nowrap">Abrir el plan de lectura →</a>
+    </div>
   </section>
 
   <section id="prayer-board" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 24px">
@@ -262,11 +267,14 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <a href="give.html" style="color: #E8D9BF">Ofrendar</a>
         <a href="es.html#prayer" style="color: #E8D9BF">Peticiones de oración</a>
         <a href="baptism.html" style="color: #E8D9BF">Bautismo y dedicación</a>
+        <a href="bible-plan.html" style="color: #E8D9BF">La Biblia en un año</a>
       </nav>
     </div>
     <div style="max-width: 1200px; margin: 0 auto; padding: 16px 24px 28px; border-top: 1px solid #3B5566; font-size: 14px; color: #C9D3DB">© 2026 Church Acts 2-42 Corp, una corporación sin fines de lucro de Florida. Todos los derechos reservados. · <a href="privacy.html" style="color: #E8D9BF">Privacidad</a></div>
   </footer>
 </div>
 <script src="assets/site.js"></script>
+<script src="assets/bible-plan.js"></script>
+<script>(function(){var n=bibleDayFor(new Date()),a=document.getElementById('home-bp-today');if(a&&window.BIBLE_PLAN){a.textContent=(document.documentElement.lang==='es'?'Día ':'Day ')+n+' · '+BIBLE_PLAN[n-1][0];a.href='bible-plan.html#d'+n;}})();</script>
 </body>
 </html>
