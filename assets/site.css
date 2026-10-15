@@ -38,3 +38,11 @@ details.mdir > summary:focus-visible { outline: 3px solid #C77D4F; outline-offse
   .grp:hover { background: #F3EBDD !important; }
 }
 .grp:focus-visible { outline: 3px solid #C77D4F; outline-offset: 2px; }
+
+/* Interest group cards collapse; click/tap the heading to open */
+details.igroup > summary::-webkit-details-marker { display: none; }
+details.igroup > summary::marker { content: ""; }
+details.igroup .ig-chev { transition: transform 0.2s ease; }
+details.igroup[open] .ig-chev { transform: rotate(180deg); }
+details.igroup > summary:hover { background: #FAF7F2; }
+details.igroup > summary:focus-visible { outline: 3px solid #C77D4F; outline-offset: -3px; }
