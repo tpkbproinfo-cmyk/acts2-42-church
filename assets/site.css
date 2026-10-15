@@ -26,3 +26,15 @@ details.mdir > summary::marker { content: ""; }
 details.mdir .mdir-chev { transition: transform 0.2s ease; }
 details.mdir[open] .mdir-chev { transform: rotate(180deg); }
 details.mdir > summary:focus-visible { outline: 3px solid #C77D4F; outline-offset: -3px; }
+
+/* Interest group cards: description shows on hover (mouse) or tap (touch) */
+.grp .grp-desc { display: none; }
+.grp .grp-chev { transition: transform 0.2s ease; }
+.grp.open .grp-desc { display: block; }
+.grp.open .grp-chev { transform: rotate(180deg); }
+@media (hover: hover) and (pointer: fine) {
+  .grp:hover .grp-desc, .grp:focus-visible .grp-desc { display: block; }
+  .grp:hover .grp-chev, .grp:focus-visible .grp-chev { transform: rotate(180deg); }
+  .grp:hover { background: #F3EBDD !important; }
+}
+.grp:focus-visible { outline: 3px solid #C77D4F; outline-offset: 2px; }

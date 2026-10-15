@@ -157,3 +157,10 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
     })
     .catch(function () { /* keep the fallback card */ });
 })();
+
+// Interest group cards: tap/click or Enter toggles the description (touch devices have no hover)
+document.querySelectorAll('.grp').forEach(function (g) {
+  function t() { var o = g.classList.toggle('open'); g.setAttribute('aria-expanded', String(o)); }
+  g.addEventListener('click', t);
+  g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
+});
