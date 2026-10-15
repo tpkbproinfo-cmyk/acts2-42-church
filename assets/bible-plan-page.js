@@ -3,10 +3,10 @@
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
   function save(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
   var done = {}; load().forEach(function (n) { done[n] = true; });
-  var version = 'NKJV';
-  try { version = localStorage.getItem(VKEY) || 'NKJV'; } catch (e) {}
+  var version = 'NLT';
+  try { version = localStorage.getItem(VKEY) || 'NLT'; } catch (e) {}
   var sel = document.getElementById('bp-version');
-  if (sel) { sel.value = version; if (sel.value !== version) { version = 'NKJV'; sel.value = version; } }
+  if (sel) { sel.value = version; if (sel.value !== version) { version = 'NLT'; sel.value = version; } }
 
   var rows = Array.prototype.slice.call(document.querySelectorAll('.bp-day'));
   function url(q) { return 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(q) + '&version=' + encodeURIComponent(version); }
