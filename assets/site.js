@@ -68,8 +68,9 @@ document.querySelectorAll('button.pray').forEach(function (btn) {
 if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.querySelectorAll('details.mdir').forEach(function (d) {
     var pinned = false;
-    d.addEventListener('mouseenter', function () { d.open = true; });
-    d.addEventListener('mouseleave', function () { if (!pinned) d.open = false; });
+    var timer = null;  // open only after the mouse rests on it for 2 seconds
+    d.addEventListener('mouseenter', function () { clearTimeout(timer); timer = setTimeout(function () { d.open = true; }, 2000); });
+    d.addEventListener('mouseleave', function () { clearTimeout(timer); if (!pinned) d.open = false; });
     d.querySelector('summary').addEventListener('click', function (e) {
       e.preventDefault(); pinned = !pinned || !d.open; d.open = pinned;
     });
@@ -162,5 +163,10 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
 document.querySelectorAll('.grp').forEach(function (g) {
   function t() { var o = g.classList.toggle('open'); g.setAttribute('aria-expanded', String(o)); }
   g.addEventListener('click', t);
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var timer = null;  // open only after the mouse rests on it for 2 seconds
+    g.addEventListener('mouseenter', function () { clearTimeout(timer); timer = setTimeout(function () { g.classList.add('hover-open'); }, 2000); });
+    g.addEventListener('mouseleave', function () { clearTimeout(timer); g.classList.remove('hover-open'); });
+  }
   g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
 });
