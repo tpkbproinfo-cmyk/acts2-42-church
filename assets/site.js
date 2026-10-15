@@ -138,7 +138,7 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
       box.innerHTML = items.slice(0, 12).map(function (it) {
         var n = it.prayer_count || 0;
         var names = (it.prayed_by || it.prayer_names || []).slice(0, 3);
-        var who = names.length ? (es ? 'Oraron: ' : 'Prayed by ') + names.map(esc).join(', ') + (n > names.length ? (es ? ' y ' : ' and ') + (n - names.length) + (es ? ' más' : (n - names.length === 1 ? ' other' : ' others')) : '') : '';
+        var who = names.length ? (es ? 'De acuerdo: ' : 'Agreeing: ') + names.map(esc).join(', ') + (n > names.length ? (es ? ' y ' : ' and ') + (n - names.length) + (es ? ' más' : (n - names.length === 1 ? ' other' : ' others')) : '') : '';
         var answered = it.status === 'answered';
         var link = app + '?request=' + encodeURIComponent(it.id);
         return '<div style="background:#FFFFFF;border:1px solid #E3DACB;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px">' +
@@ -148,7 +148,7 @@ if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)')
           (answered && it.praise_note ? '<p style="margin:0;font-size:16px;line-height:1.6;color:#8A4A22;font-style:italic">' + esc(it.praise_note) + '</p>' : '') +
           '<a href="' + link + '" target="_blank" rel="noopener" class="pray" style="align-self:flex-start;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;padding:10px 16px;border-radius:999px;background:#FFFFFF;color:#2F4858;border:2px solid #E3DACB">' +
           '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C77D4F" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>' +
-          (es ? 'Oré · ' : 'I prayed · ') + n + '</a>' +
+          (es ? 'Estoy de acuerdo en oración · ' : 'I\'m agreeing in prayer · ') + n + '</a>' +
           (who ? '<span style="font-size:14px;color:#4F6676">' + who + '</span>' : '') +
           '</div>';
       }).join('');
