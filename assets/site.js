@@ -39,7 +39,7 @@
       form.querySelectorAll('input, textarea, select').forEach(function (el) {
         if (el.closest('[hidden]')) return;
         if (el.type === 'radio') { if (el.checked) lines.push((es ? 'Visibilidad' : 'Who may see this') + ': ' + labelText(el)); return; }
-        if (el.type === 'checkbox') { if (el.checked) lines.push('✓ ' + labelText(el)); return; }
+        if (el.type === 'checkbox') { if (el.checked) lines.push('✓ ' + (el.getAttribute('data-cat') ? el.getAttribute('data-cat') + ': ' : '') + (el.closest('label').querySelector('span') ? el.closest('label').querySelector('span').firstChild.textContent.trim() : labelText(el))); return; }
         if (el.value && el.value.trim()) lines.push(labelText(el) + ': ' + el.value.trim());
       });
       if (!lines.length) {
