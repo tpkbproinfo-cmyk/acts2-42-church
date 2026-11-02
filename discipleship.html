@@ -13,6 +13,16 @@
 <style>
 body{margin:0;background:#FAF7F2}
 a{color:#2F4858}a:hover{color:#1E3240}
+.vpill{position:relative}.vref{position:static;display:inline-block}
+.vref-btn{all:unset;cursor:pointer;font-size:15px;font-weight:600;color:#2F4858;text-decoration:underline dotted;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.vref-btn:focus-visible{outline:2px solid #C49A40;outline-offset:3px;border-radius:3px}
+.vpop{position:absolute;left:0;bottom:calc(100% + 14px);width:max-content;max-width:min(360px,80vw);background:#1E3240;color:#FAF7F2;border-radius:12px;padding:16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.28);display:flex;flex-direction:column;gap:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:30;pointer-events:none;text-align:left}
+.vpop::after{content:"";position:absolute;left:30px;top:100%;border:8px solid transparent;border-top-color:#1E3240}
+.vpop-t{font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;font-weight:400;line-height:1.55;white-space:normal}
+.vpop-r{font-size:13px;font-weight:700;letter-spacing:.04em;color:#C49A40}
+.vpill:has(.vref.open){z-index:30}
+.vref.open .vpop{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+
 </style>
 <link rel="stylesheet" href="assets/site.css">
 
@@ -72,6 +82,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Word</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Learn the Truth.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Biblical doctrine, interpretation, and application. Establish a solid foundation in Scripture.</p>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">2 Timothy 3:16–17</button><span class="vpop" role="tooltip"><span class="vpop-t">All Scripture is inspired by God and is useful to teach us what is true and to make us realize what is wrong in our lives. It corrects us when we are wrong and teaches us to do what is right. God uses it to prepare and equip his people to do every good work.</span><span class="vpop-r">2 Timothy 3:16–17 (NLT)</span></span></span></span>
         <a href="bible-plan.html" style="align-self: flex-start; margin-top: 4px; background: #C77D4F; color: #1E3240; border-radius: 999px; padding: 8px 16px; font-size: 15px; font-weight: 700; text-decoration: none">Read the Bible in one year →</a>
       </div>
     </div>
@@ -82,6 +93,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Prayers</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Depend on God.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Develop a life of personal and corporate prayer, worship, and spiritual devotion.</p>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Philippians 4:6–7</button><span class="vpop" role="tooltip"><span class="vpop-t">Don’t worry about anything; instead, pray about everything. Tell God what you need, and thank him for all he has done. Then you will experience God’s peace, which exceeds anything we can understand. His peace will guard your hearts and minds as you live in Christ Jesus.</span><span class="vpop-r">Philippians 4:6–7 (NLT)</span></span></span></span>
       </div>
     </div>
 
@@ -91,7 +103,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Transformation</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Become Like Christ.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Learn what it means to be a disciple through obedience, repentance, spiritual disciplines, and Christlike character.</p>
-        <span style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858">Romans 12:1–2 · Luke 9:23</span>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Romans 12:1–2</button><span class="vpop" role="tooltip"><span class="vpop-t">And so, dear brothers and sisters, I plead with you to give your bodies to God because of all he has done for you. Let them be a living and holy sacrifice—the kind he will find acceptable. This is truly the way to worship him. Don’t copy the behavior and customs of this world, but let God transform you into a new person by changing the way you think. Then you will learn to know God’s will for you, which is good and pleasing and perfect.</span><span class="vpop-r">Romans 12:1–2 (NLT)</span></span></span> · <span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Luke 9:23</button><span class="vpop" role="tooltip"><span class="vpop-t">Then he said to the crowd, “If any of you wants to be my follower, you must give up your own way, take up your cross daily, and follow me.”</span><span class="vpop-r">Luke 9:23 (NLT)</span></span></span></span>
       </div>
     </div>
 
@@ -101,6 +113,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Fellowship</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Grow Together.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Build biblical community through unity, accountability, encouragement, and serving one another.</p>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Hebrews 10:24–25</button><span class="vpop" role="tooltip"><span class="vpop-t">Let us think of ways to motivate one another to acts of love and good works. And let us not neglect our meeting together, as some people do, but encourage one another, especially now that the day of his return is drawing near.</span><span class="vpop-r">Hebrews 10:24–25 (NLT)</span></span></span></span>
       </div>
     </div>
 
@@ -110,6 +123,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Table</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Remember Christ.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Explore communion, breaking bread, hospitality, and the shared life of the church.</p>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">1 Corinthians 11:26</button><span class="vpop" role="tooltip"><span class="vpop-t">For every time you eat this bread and drink this cup, you are announcing the Lord’s death until he comes again.</span><span class="vpop-r">1 Corinthians 11:26 (NLT)</span></span></span></span>
       </div>
     </div>
 
@@ -119,7 +133,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Witness</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Share the Gospel.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Learn to articulate the Gospel, share your testimony, and live as a witness for Jesus Christ.</p>
-        <span style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858">Acts 1:8 · Matthew 28:19–20</span>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Acts 1:8</button><span class="vpop" role="tooltip"><span class="vpop-t">But you will receive power when the Holy Spirit comes upon you. And you will be my witnesses, telling people about me everywhere—in Jerusalem, throughout Judea, in Samaria, and to the ends of the earth.</span><span class="vpop-r">Acts 1:8 (NLT)</span></span></span> · <span class="vref"><button type="button" class="vref-btn" aria-expanded="false">Matthew 28:19–20</button><span class="vpop" role="tooltip"><span class="vpop-t">Therefore, go and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit. Teach these new disciples to obey all the commands I have given you. And be sure of this: I am with you always, even to the end of the age.</span><span class="vpop-r">Matthew 28:19–20 (NLT)</span></span></span></span>
       </div>
     </div>
 
@@ -129,7 +143,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Multiplication</span>
         <h2 style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 30px">Disciple Others.</h2>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3B5566; max-width: 760px">Equip mature believers to mentor others, teach biblical truth, and reproduce disciples who make disciples.</p>
-        <span style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858">2 Timothy 2:2</span>
+        <span class="vpill" style="align-self: flex-start; margin-top: 4px; background: #FFFFFF; border: 1px solid #E3DACB; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; color: #2F4858"><span class="vref"><button type="button" class="vref-btn" aria-expanded="false">2 Timothy 2:2</button><span class="vpop" role="tooltip"><span class="vpop-t">You have heard me teach things that have been confirmed by many reliable witnesses. Now teach these truths to other trustworthy people who will be able to pass them on to others.</span><span class="vpop-r">2 Timothy 2:2 (NLT)</span></span></span></span>
       </div>
     </div>
   </section>
@@ -325,5 +339,24 @@ a{color:#2F4858}a:hover{color:#1E3240}
   </footer>
 </div>
 <script src="assets/site.js"></script>
+<script>
+(function(){
+  var refs=[].slice.call(document.querySelectorAll('.vref'));
+  function close(r){r.classList.remove('open');r.querySelector('.vref-btn').setAttribute('aria-expanded','false');}
+  function open(r){refs.forEach(function(o){if(o!==r)close(o);});r.classList.add('open');r.querySelector('.vref-btn').setAttribute('aria-expanded','true');}
+  var hoverable=window.matchMedia('(hover: hover)').matches;
+  refs.forEach(function(r){
+    var t=null,b=r.querySelector('.vref-btn');
+    if(hoverable){
+      r.addEventListener('mouseenter',function(){clearTimeout(t);t=setTimeout(function(){open(r);},1000);});
+      r.addEventListener('mouseleave',function(){clearTimeout(t);close(r);});
+    }
+    b.addEventListener('click',function(e){e.stopPropagation();clearTimeout(t);r.classList.contains('open')?close(r):open(r);});
+  });
+  document.addEventListener('click',function(e){refs.forEach(function(r){if(!r.contains(e.target))close(r);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')refs.forEach(close);});
+})();
+</script>
+
 </body>
 </html>
