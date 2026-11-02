@@ -13,6 +13,24 @@
 <style>
 body{margin:0;background:#FAF7F2}
 a{color:#2F4858}a:hover{color:#1E3240}
+.stepbar{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin:0 0 20px}
+.sb-row{flex:1 1 640px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;background:#FFFFFF;border:1px solid #E3DACB;border-radius:16px;padding:8px}
+.sb{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 4px 8px;border-radius:12px;text-align:center;color:#2F4858;transition:background .15s}
+.sb:hover{background:#F3EDE3}
+.sb:focus-visible{outline:2px solid #C49A40;outline-offset:2px}
+.sb[aria-expanded="true"]{background:#E8D9BF}
+.sb-n{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Libre Baskerville',serif;font-weight:700;font-size:16px}
+.sb-t{font-size:13px;font-weight:700;letter-spacing:.04em;line-height:1.2}
+.sb-c{transition:transform .2s}
+.sb[aria-expanded="true"] .sb-c{transform:rotate(180deg)}
+.sb-all{all:unset;box-sizing:border-box;cursor:pointer;flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:16px;background:#2F4858;color:#FAF7F2;font-weight:700;font-size:15px}
+.sb-all:focus-visible{outline:2px solid #C49A40;outline-offset:2px}
+.sb-all svg{transition:transform .2s}
+.sb-all[aria-expanded="true"] svg{transform:rotate(180deg)}
+.js-steps .step-panel{display:none !important}
+.js-steps .step-panel.show{display:flex !important}
+@media (max-width:760px){.sb-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.sb{flex:0 0 92px;scroll-snap-align:start}.sb-t{font-size:12px}.sb-all{flex:1 1 100%}}
+
 .vpill{position:relative}.vref{position:static;display:inline-block}
 .vref-btn{all:unset;cursor:pointer;font-size:15px;font-weight:600;color:#2F4858;text-decoration:underline dotted;text-underline-offset:4px;text-decoration-thickness:1.5px}
 .vref-btn:focus-visible{outline:2px solid #C49A40;outline-offset:3px;border-radius:3px}
@@ -76,7 +94,11 @@ a{color:#2F4858}a:hover{color:#1E3240}
 
   <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 64px; display: flex; flex-direction: column">
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <nav class="stepbar" aria-label="Pathway steps">
+      <div class="sb-row"><button type="button" class="sb" data-step="1" aria-controls="step-1" aria-expanded="false"><span class="sb-n" style="background: #6E8CA0; color: #14232D">01</span><span class="sb-t">The Word</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="2" aria-controls="step-2" aria-expanded="false"><span class="sb-n" style="background: #2F4858; color: #FAF7F2">02</span><span class="sb-t">The Prayers</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="3" aria-controls="step-3" aria-expanded="false"><span class="sb-n" style="background: #E8D9BF; color: #8A4A22">03</span><span class="sb-t">The Transformation</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="4" aria-controls="step-4" aria-expanded="false"><span class="sb-n" style="background: #C77D4F; color: #1E3240">04</span><span class="sb-t">The Fellowship</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="5" aria-controls="step-5" aria-expanded="false"><span class="sb-n" style="background: #6E8CA0; color: #14232D">05</span><span class="sb-t">The Table</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="6" aria-controls="step-6" aria-expanded="false"><span class="sb-n" style="background: #2F4858; color: #FAF7F2">06</span><span class="sb-t">The Witness</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button type="button" class="sb" data-step="7" aria-controls="step-7" aria-expanded="false"><span class="sb-n" style="background: #C49A40; color: #1E3240">07</span><span class="sb-t">The Multiplication</span><svg class="sb-c" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button></div>
+      <button type="button" class="sb-all" aria-expanded="false">Show all 7 steps <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    </nav>
+    <div class="step-panel" id="step-1" role="region" aria-label="Step 1: The Word" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #6E8CA0; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #14232D">01</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Word</span>
@@ -86,7 +108,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <div class="step-panel" id="step-2" role="region" aria-label="Step 2: The Prayers" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #2F4858; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #FAF7F2">02</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Prayers</span>
@@ -96,7 +118,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <div class="step-panel" id="step-3" role="region" aria-label="Step 3: The Transformation" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #E8D9BF; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #8A4A22">03</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Transformation</span>
@@ -106,7 +128,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <div class="step-panel" id="step-4" role="region" aria-label="Step 4: The Fellowship" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #C77D4F; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #1E3240">04</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Fellowship</span>
@@ -116,7 +138,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <div class="step-panel" id="step-5" role="region" aria-label="Step 5: The Table" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #6E8CA0; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #14232D">05</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Table</span>
@@ -126,7 +148,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
+    <div class="step-panel" id="step-6" role="region" aria-label="Step 6: The Witness" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #2F4858; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #FAF7F2">06</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Witness</span>
@@ -136,7 +158,7 @@ a{color:#2F4858}a:hover{color:#1E3240}
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB; border-bottom: 1px solid #E3DACB">
+    <div class="step-panel" id="step-7" role="region" aria-label="Step 7: The Multiplication" style="display: flex; flex-wrap: wrap; gap: 16px 40px; padding: 36px 0; border-top: 1px solid #E3DACB; border-bottom: 1px solid #E3DACB">
       <div style="flex: 0 0 96px; height: 96px; border-radius: 50%; background: #C49A40; display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 34px; font-weight: 700; color: #1E3240">07</div>
       <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 8px">
         <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4A22">The Multiplication</span>
@@ -338,6 +360,21 @@ a{color:#2F4858}a:hover{color:#1E3240}
   </footer>
 </div>
 <script src="assets/site.js"></script>
+<script>
+(function(){
+  var bar=document.querySelector('.stepbar'); if(!bar) return;
+  bar.parentElement.classList.add('js-steps');
+  var btns=[].slice.call(bar.querySelectorAll('.sb')), all=bar.querySelector('.sb-all');
+  var panels=btns.map(function(b){return document.getElementById('step-'+b.getAttribute('data-step'));});
+  function setAll(on){panels.forEach(function(p){p.classList.toggle('show',on);});btns.forEach(function(b){b.setAttribute('aria-expanded',on?'true':'false');});all.setAttribute('aria-expanded',on?'true':'false');all.firstChild.nodeValue=on?'Hide all steps ':'Show all 7 steps ';}
+  function show(n){var allOpen=all.getAttribute('aria-expanded')==='true', b=btns[n-1], open=b.getAttribute('aria-expanded')==='true'&&!allOpen;
+    setAll(false); if(!open){panels[n-1].classList.add('show');b.setAttribute('aria-expanded','true');}}
+  btns.forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-step'));});});
+  all.addEventListener('click',function(){setAll(all.getAttribute('aria-expanded')!=='true');});
+  show(1);
+})();
+</script>
+
 <script>
 (function(){
   var refs=[].slice.call(document.querySelectorAll('.vref'));
